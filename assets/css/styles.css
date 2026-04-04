@@ -8,24 +8,62 @@ html {
 body {
 	margin: 1em;
 	background-color: black;
-	color: whitesmoke;
+	outline: black;
+	color: greenyellow;
 	font-size: 5rem;
 	overflow: hidden;
-	background-image: url("../img/flames.gif");
-	background-repeat: no-repeat;
-	background-position: center;
 	background-size: cover;
+	background: linear-gradient(-45deg, #ff6b6b, #f7d794, #1dd1a1, #54a0ff);
+    background-size: 400% 400%;
+    animation: gradientMove 2s ease infinite;
+
 }
 
-.grid-container{
-	display: grid;
+.scroll-text {
+	position: absolute;
+	animation: scrollUpDown 4s ease-in-and-out infinite alternate; 
+}
+.scroll-container{
+	display: scroll;
 	/* grid-template-columns: 1fr 1fr 1fr; */
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	gap: 2rem;
 	margin: 10% 4rem 0 4rem;
+	position: relative;
+	overflow: hidden;
+}
+
+div {
+	transition-property: transform;
+	transition-duration: 1s;
 }
 
 .last {
 	padding-bottom: 2rem;
 	border-bottom: 2px solid rgb(220, 200, 180);
+}
+
+.special1 {
+	position:absolute;
+	width: 2800px;
+	height: 2000px;
+	top: 10px;
+	padding: 290px;
+}
+
+
+/*
+.last:hover {
+	animation-name: growAndGlow;
+	animation-duration: 3s;
+}
+*/
+
+@keyframes scrollUpDown {
+	0% {transform: translateY(0);}
+	100% {transform: translateY(-100%);}
+}
+
+canvas {
+	display: block;
 }
