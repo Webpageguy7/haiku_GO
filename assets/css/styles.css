@@ -32,9 +32,9 @@ p {
 }
 /*spiral container*/
 .spiral {
-	padding: 80px;
-  width: 1550px;
-  height: 1550px;
+padding: 80px;
+  width: 50vh;
+  height: 50vh;
   border-radius: 50%;
   
   /* Create a conic gradient with multiple colors */
