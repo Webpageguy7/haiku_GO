@@ -16,10 +16,10 @@ body {
 	}
 
 p {
-	outline: black;
+	outline: none;
 	color: greenyellow;
 	display: flex;
-	font-size: 85px;
+	font-size: 50px;
 	justify-content: center;
 	align-items: center;
 	mask-repeat: repeat;
@@ -33,8 +33,8 @@ p {
 /*spiral container*/
 .spiral {
 padding: 80px;
-  width: 50vh;
-  height: 50vh;
+  width: 100vh;
+  height: 100vh;
   border-radius: 50%;
   
   /* Create a conic gradient with multiple colors */
@@ -72,8 +72,8 @@ padding: 80px;
 }
 
 .marquee-container {
-	width: 200px;
-	height: 150px; /*visible area */
+	width: 45vh;
+	height: 50vh; /*visible area */
 	overflow: hidden;
 	border: 1px solid black;
 	position: relative;
@@ -101,7 +101,7 @@ padding: 80px;
 
 .special1 {
 	position: absolute;
-	width: 50vh;
+	width: 75vh;
 	height: 50vh;
 	margin: 0;
 	top: 20%;
