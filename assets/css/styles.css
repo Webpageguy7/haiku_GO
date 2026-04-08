@@ -72,8 +72,8 @@ padding: 80px;
 }
 
 .marquee-container {
-	width: 400px;
-	height: 1000px; /*visible area */
+	width: 200px;
+	height: 150px; /*visible area */
 	overflow: hidden;
 	border: 1px solid black;
 	position: relative;
@@ -101,8 +101,8 @@ padding: 80px;
 
 .special1 {
 	position: absolute;
-	width: 980px;
-	height: 750px;
+	width: 50vh;
+	height: 50vh;
 	margin: 0;
 	top: 20%;
 	left: 37%;
