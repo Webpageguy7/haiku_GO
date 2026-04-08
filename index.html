@@ -3,26 +3,50 @@
 <head>
 	<meta charset="utf-8">
 	<title>Haiku</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./assets/css/styles.css">
+	<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@marqueefy/marqueefy@1.0.3/dist/css/marqueefy.min.css" 
+      integrity="sha384-wADgvhAqbORDLWCl6LHRmwaldDxcsCZJ9EfC4tyLmlqRSrxK8SQSmUprPJYdtCZb" 
+      crossorigin="anonymous">
 	<link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="scroll-text">
-	<canvas id="blobCanvas"></canvas>
-		<div class="scroll-container">
-			<div>The</div>
-			<div>Colors</div>
-			<div class="last">Spilling</div>
-			<div>From</div>
-			<div>Our</div>
-			<div>Minds</div>
-			<div>Paint</div>
-			<div>A</div>
-			<div class="last">Funny</div>
-			<div>Picture</div>
-			<div>Of</div>
-			<div>The</div>
-			<div class="last">World</div>
+<body>
+<div class="marquee-container">
+	<div class="marqueefy" id="example1" data-mq-direction="top" style="height: 1400px; width: 380px;" tabindex="0";>
+		<div class="content" id="finger-paint-regular">
+			<p>The</p>
+			<br>
+			<p>Colors</p>
+			<br>
+			<p>Twirling</p>
+			<br>
+			<p>In</p>
+			<br>
+			<p>Our</p>
+			<br>
+			<p>Minds</p>
+			<br>
+			<p>Paint</p>
+			<br>
+			<p>A</p>
+			<br>
+			<p>Funny</p>
+			<br>
+			<p>Picture</p>
+			<br>
+			<p>Of</p>
+			<br>
+			<p>The</p>
+			<br>
+			<p>World</p>
 		</div>
-	<img class="special1" src="assets/img/BrainEdit.png">
+	</div>
+</div>
+	<div class="spiral"></div>
+	<img class= "special1" src="assets/img/BrainEdit.png">
 	<script src="./assets/js/main.js"></script>
 </body>
 </html>
