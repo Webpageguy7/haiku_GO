@@ -1,81 +1,31 @@
-// main.js
-let grid = document.querySelectorAll(".scroll-container");
-let divs = document.querySelectorAll(".scroll-container div")
 
+//script.js
+    (function () {
+        const marquee = document.getElementById('marquee');
+        const container = marquee.parentElement;
 
-const canvas = document.getElementById("blobCanvas");
-const ctx = canvas.getContext("2d");
-let width = window.innerWidth;
-let height = window.innerHeight;
-canvas.width = width;
-canvas.height = height;
+        //Duplicate content for a seamless loop
+        marquee.InnerHTML += marquee.innerHTML;
 
-const blobCount = 10; // Number of blobs
-const blobs = [];
+        let speed = 0.5; //pixels per frame
+        let position = 0;
 
-// ====== Blob Class ======
-class Blob {
-    constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.radius = 80 + Math.random() * 60;
-        this.color = `hsla(${Math.random() * 360}, 80%, 60%, 0.6)`;
-        this.vx = (Math.random() - 0.5) * 1.5;
-        this.vy = (Math.random() - 0.5) * 1.5;
-    }
+        function animate() {
+            position -= speed;
+            if (Math.abs(position) >= marquee.scrollHeight / 2) {
+                position = 0; //reset to start
+            }
+            marquee.style.transform = 'translateY(${position}px)';
+            requestAnimationFrame(animate);
+        }
+        //start animation
+        animate();
+    }) ();
 
-    update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Bounce off edges
-        if (this.x - this.radius < 0 || this.x + this.radius > width) this.vx *= -1;
-        if (this.y - this.radius < 0 || this.y + this.radius > height) this.vy *= -1;
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-    }
-}
-
-// ====== INITIALIZE BLOBS ======
-for (let i = 0; i < blobCount; i++) {
-    blobs.push(new Blob());
-}
-
-// ====== ANIMATION LOOP ======
-function animate() {
-    ctx.clearRect(0, 0, width, height);
-
-    // Optional: blend colors for a smooth effect
-    ctx.globalCompositeOperation = "lighter";
-
-    blobs.forEach(blob => {
-        blob.update();
-        blob.draw();
-    });
-
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-// ====== HANDLE RESIZE ======
-window.addEventListener("resize", () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-});
-
-function getRandomColor() {
-    return 'hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)';
-}
-
-//change the background color evert second
-setInterval(() => {
-    document.body.style.backgroundColor = getRandomColor();
-}, 1000)
+    // Initialize Marqueefy
+const marqueefyList = Array.prototype.slice.call(document.querySelectorAll('.marqueefy'))
+const marqueefyInstances = marqueefyList.map(m => {
+  return new marqueefy.Marqueefy(m, {direction: 'up', speed: 100})
+  
+})
+    
